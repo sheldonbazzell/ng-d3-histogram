@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font: 14px sans-serif;
+            color: white;
+            background: black;
+        }
+        #container {
+            width: 860px;
+            margin: 20px auto;
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+        rect {
+            fill: steelblue;
+        }
+        .axis path, .axis line {
+            fill: none;
+            stroke: white;
+            shape-rendering: crispEdges;
+        }
+        .axis text, .bar text {
+            stroke: white;
+        }
+
+        .bar text {
+            display: none;
+        }
+        .axis path{
+            fill: none;
+            stroke: none;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 0;
+        }
+        #button, input {
+            border-radius: 3px;
+            margin: 2%;
+            display: inline-block;
+        }
+        #button {
+            padding: 5px 10px;
+            margin-right: 5%;
+        }
+        input {
+            margin-left: 60%;
+            padding: 4px 8px;
+        }
+    </style>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./nano-histogram.js"></script>
+    <script src="./nano-app.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="mainCtrl">
+            <div id="container">
+                <d3-chart width="width" data="values" hovered="hovered(args)"></d3-chart>
+                <d3-chart-footer></d3-chart-footer>
+                <!-- <input type="text" ng-model="width"/> -->
+                <!-- <input type="button" ng-click="updateWidth(width)" value="Update Width"> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
