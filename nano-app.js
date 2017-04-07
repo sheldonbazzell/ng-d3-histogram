@@ -4,12 +4,6 @@ app.service('dataService', function() {
 
 	this.values = d3.range(1000).map(d3.random.normal(20, 5));
 
-	// this.get = function() {
-	// 	$http.get('data').then(function(res) {
-	// 		this.values = res.data;
-	// 	})
-	// }
-
 	this.update = function() {
 		this.values = d3.range(1000).map(d3.random.normal(20, 5));
 		return this.values;
@@ -58,6 +52,7 @@ app.directive('d3Chart', ['dataService', function(dS){
             var chartEl = d3.select(element[0]);
 
             chart.on('barHover', function(d, i){
+            	console.log('hello')
                 scope.hovered({args:d.length});
             });
 
