@@ -82,10 +82,10 @@ function Histogram(values) {
     chart.width = function(value) {
         if (!arguments.length) return width;
         options.width = value;
-        console.log(options.width)
         d3.select("svg").remove();
         return chart();
     };
+
     d3.rebind(chart, listen, 'on');
     return chart;
 }
